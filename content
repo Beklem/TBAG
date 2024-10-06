@@ -1,1 +1,3 @@
-
+main.py- code for the Nosferatu Library
+item.py- code for the camera (Item) logic
+map.py- code for the map/layout of rooms
