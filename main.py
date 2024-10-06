@@ -1,7 +1,5 @@
 from map import Room
 from item import Item
-from character import Character
-from character import Ghost
 import sys
 
 
@@ -63,7 +61,7 @@ camera_art = """
 camera = Item()
 
 
-#map stuff
+#map stuff - more for future reference than application here...
 studyRoom = Room("Study Room")
 meetingRoom = Room("Meeting Room")
 storytimeRoom = Room("Storytime Room") 
@@ -82,18 +80,10 @@ meetingRoom.describe()
 storytimeRoom.set_description("Colourful images stand out from the decrepid library. Beautifully colourful murals of children's fables are scattered across the walls in a dazzling array.")
 storytimeRoom.describe()
 
-#pov: professor aaron sequence needs to be triggered when player has been through both rooms 
-room_visits = {}
-    
-def visit_room(room_name):
-    room_visits[room_name] = True
-
-
 # function to check room visits
 meetingRoom.visit_room(meetingRoom)
 storytimeRoom.visit_room(storytimeRoom)
 
-#aadd to description latin phrase -- seek to explore, for the designer does not settle for lack of exploration. "quaere explorare, non enim determinat exploratio defectus excogitatoris."
 #Coding the storyline, actual printed text and conversation
 print("Welcome to  Nosferatu  Library!")
 print("As you walk past, you read a sign saying 'quaere explorare, non enim determinat exploratio defectus excogitatoris'.")
@@ -418,7 +408,7 @@ def studyRoom():
 
 
 
-#need to add link from storytime room to meeting and VICE VERSA if meeting room was not picked on roomchoice
+
 #the second act
 def meetingRoom():
             print("You adventure on to the Meeting Room.")
@@ -614,6 +604,7 @@ if roomChoice == "yes":
         print("Professor Aaron]: Hello there, my most promising student! ")
         print("Professor Aaron]: I have something for you")
         print("*you receive a paranormal camera*")
+        print("Type 'camera' when to use the camera when  the moment is right!")
         print("Professor Aaron]: This camera will assist you on your investigation.")
         print("Professor Aaron]: It will allow you to photograph the invisible occupants of these hallowed halls.")
         print("Onwards, my protege. You must return all 3 pictures to make it out without a scratch!")
@@ -640,6 +631,7 @@ if roomChoice == "yes":
         print("Professor Aaron]: Hello there, student!")
         print("Professor Aaron]: I have something for you")
         print("*you receive a paranormal camera*")
+        print("Type 'camera' when to use the camera when  the moment is right!")
         print("Professor Aaron]: This camera will assist you on your investigation.")
         print("Professor Aaron]: It will allow you to photograph the invisible occupants of these hallowed halls.")
         print("Onwards, my protege. You must return all 3 pictures to make it out without a scratch!")
@@ -657,10 +649,6 @@ if roomChoice == "yes":
 
         if (roomchoice2 == "meeting"):
             meetingRoom()
-
-
-     
-
 
 
 #player can terminate at any input
